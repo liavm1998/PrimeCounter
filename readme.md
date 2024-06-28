@@ -27,3 +27,29 @@ Note, the project requires a gcc compiler
 
 - To clean up
   `  make clean`
+
+- To run test
+  `  make test`
+
+## Running the Program
+
+```bash
+./randomGenerator 100 10000000 | ./primeCounter
+```
+
+## Running with Time Measurement
+
+```bash
+time ./randomGenerator 10 10000000 |  ./primeCounter
+```
+
+## Tests
+
+we have built two tests.
+
+1. Unit test for the isPrime function
+2. Integration test which checks our logic and validates the expected prime numbers is equal to the expected number.
+   The test were built using cUnit package.
+
+- To run tests
+  `  make test`
