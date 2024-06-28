@@ -44,8 +44,24 @@ test_isPrime: test_isPrime.o
 test_isPrime.o: tests/test_isPrime.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
+test_generator: test_generator.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+# Rule to build the test object file
+test_generator.o: tests/test_generator.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+test_isPrime: test_isPrime.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+# Rule to build the test object file
+test_isPrime.o: tests/test_isPrime.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+
 # Rule to run the test
-test: test_isPrime
+test: test_generator test_isPrime
+	./test_generator
 	./test_isPrime
 
 # Rule to build object files
