@@ -2,7 +2,10 @@
 CC = gcc
 
 # Compiler flags
-CFLAGS = -Wall -Iinclude
+CFLAGS = -Wall -Iinclude -I/usr/include/CUnit
+
+# Linker flags
+LDFLAGS = -lcunit -lm
 
 # Source and object directories
 SRC_DIR = src
@@ -15,7 +18,7 @@ SOURCES = $(SRC_DIR)/generator.c $(SRC_DIR)/myPrimeCounter.c $(SRC_DIR)/myPrimeC
 OBJECTS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SOURCES))
 
 # Executable names
-EXECUTABLES = randomGenerator myPrimeCounter myPrimeCounter_only_threads primeCounter
+EXECUTABLES = randomGenerator myPrimeCounter myPrimeCounter_only_threads primeCounter test_isPrime
 
 # Default target
 all: $(EXECUTABLES)
@@ -33,11 +36,22 @@ myPrimeCounter_only_threads: $(OBJ_DIR)/myPrimeCounter_only_threads.o $(OBJ_DIR)
 primeCounter: $(OBJ_DIR)/primeCounter.o $(OBJ_DIR)/queue.o
 	$(CC) $(CFLAGS) -o $@ $^
 
+# Rule to build the test executable
+test_isPrime: test_isPrime.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+# Rule to build the test object file
+test_isPrime.o: tests/test_isPrime.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+# Rule to run the test
+test: test_isPrime
+	./test_isPrime
+
 # Rule to build object files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 # Clean target
 clean:
-	rm -f $(OBJ_DIR)/*.o $(EXECUTABLES)
-
+	rm -f $(OBJ_DIR)/*.o $(EXECUTABLES) test_isPrime test_isPrime.o
