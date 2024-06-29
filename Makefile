@@ -70,4 +70,4 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 # Clean target
 clean:
-	rm -f $(OBJ_DIR)/*.o $(EXECUTABLES) test_isPrime test_isPrime.o
+	rm -f $(OBJ_DIR)/*.o test_generator.o tests/test_isPrime.o test_isPrime.o $(EXECUTABLES)
