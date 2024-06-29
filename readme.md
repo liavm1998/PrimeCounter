@@ -57,13 +57,15 @@ we have built two tests.
 ## Performance Comparison
 
 Their output:
-<img src="images/their_output.jpeg" alt="Description" width="200"/>
+
+- <img src="images/their_output.jpeg" alt="Description" width="300"/>
 
 Our output:
-* The following output includes threads and a better algorithm for primaries
-<img src="images/our_output.jpeg" alt="Description" width="200"/>
 
-* The following output includes only threads without the primaries improved algorithm
-<img src="our_output_without_the_isPrime_impro.jpeg" alt="Description" width="200"/>
+- The following output includes threads and a better algorithm for primaries
+  <img src="images/our_output.jpeg" alt="Description" width="300"/>
+
+- The following output includes only threads without the primaries improved algorithm
+  <img src="images/our_output_without_the_isPrime_impro.jpeg" alt="Description" width="300"/>
 
 We can see that our output achieved a better score. To do so, we
