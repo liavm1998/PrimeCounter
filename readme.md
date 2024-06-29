@@ -20,10 +20,8 @@ Note, the project requires a gcc compiler
   https://github.com/liavm1998/PrimeCounter.git
 ```
 
-- To build the project
-  `  make`
 - To build and run the project
-  `  make run`
+  `  make all`
 
 - To clean up
   `  make clean`
