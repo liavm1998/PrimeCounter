@@ -62,12 +62,13 @@ Their output:
 
 Our output:
 
-The following output includes threads and a better algorithm for primaries
 
-<img src="images/our_output.jpeg" alt="Description" width="300"/>
-
-The following output includes only threads without the primaries improved algorithm
+Our improved solution without improving the isPrime function
 
 <img src="images/our_output_without_the_isPrime_impro.jpeg" alt="Description" width="300"/>
 
-We can see that our output achieved a better score. To do so, we
+Our improved solution with improving the isPrime function
+
+<img src="images/our_output.jpeg" alt="Description" width="300"/>
+
+We can see that our output achieved a better score.
