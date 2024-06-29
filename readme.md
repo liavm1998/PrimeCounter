@@ -71,4 +71,4 @@ Our improved solution with improving the isPrime function
 
 <img src="images/our_output.jpeg" alt="Description" width="300"/>
 
-We can see that our output achieved a better score.
+We can see that our output achieved better scores.
