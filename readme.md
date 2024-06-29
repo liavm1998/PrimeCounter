@@ -53,3 +53,7 @@ we have built two tests.
 
 - To run tests
   `  make test`
+
+## Performance Comparsion
+
+;; <img src="images/their_output" alt="Description" width="200"/>
